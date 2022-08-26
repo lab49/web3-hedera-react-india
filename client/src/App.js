@@ -3,12 +3,15 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { connectToWallet, getBalance, sendTransaction, associateUser, initializeWallet, dissconnectWallet } from './utils/hashconnect';
 
 function App() {
   const [isWalletFound, setIsWalletFound] = useState(true);
   const [isWalletConnected, setIsWalletConnected] = useState(null);
   const [balance, setBalance] = useState();
+  const [receiver, setReceiver] = useState("");
+  const [amount, setAmount] = useState(0);
 
   useEffect(() => {
     initializeWallet(updateWalletDetails)
@@ -21,6 +24,16 @@ function App() {
       setIsWalletConnected(WalletConnected);
       setBalance(await getBalance())
     }
+  }
+  const updateReceiver = ({ target }) => {
+    setReceiver(target.value)
+  }
+  const updateAmount = ({ target }) => {
+    setAmount(target.value)
+  }
+
+  const send = () => {
+    sendTransaction(receiver, Number(amount))
   }
 
   const dissconnect = () => {
@@ -40,21 +53,34 @@ function App() {
                   {
                     balance ? (
                       <>
-                        <div> Balance : {balance}</div>
-                        <input type="text" placeholder='Receiver' />
-                        <input type="number" placeholder='Amount' />
-                        <Button onClick={sendTransaction}>Send</Button>
+                        <Alert variant='info'>
+                          Balance : {balance}
+                        </Alert>
+
+                        <div className='d-flex justify-content-center'>
+
+                          <Form className='w-50'>
+                            <Form.Group className="mb-3">
+                              <Form.Control type="text" placeholder='Receiver' value={receiver} onChange={updateReceiver} />
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                              <Form.Control type="number" placeholder='Amount' value={amount} onChange={updateAmount} />
+                            </Form.Group>
+                          </Form>
+                        </div>
+                        <Button onClick={send}>Send</Button>
                       </>
                     ) : (
                       <div>
-                        Your account is not associated with Token
-                        <br />
+                        <Alert variant='danger'>
+                          Your account is not associated with Token
+                        </Alert>
                         <Button onClick={associateUser}>Associate Token</Button>
                       </div>
                     )
                   }
                   <br />
-                  <Button onClick={dissconnect}>Dissconnect</Button>
+                  <Button className='mt-4' onClick={dissconnect}>Dissconnect</Button>
                 </>
               ) : (
                 <Button onClick={connectToWallet}>Connect to Wallet</Button>

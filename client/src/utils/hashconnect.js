@@ -60,7 +60,7 @@ const getSolidityAddress = (accountId) => {
     return AccountId.fromString(accountId).toSolidityAddress()
 }
 
-export const sendTransaction = async (sender, amount) => {
+export const sendTransaction = async (receiver, amount) => {
     const provider = hashconnect.getProvider("testnet", topic, accountId)
     const signer = hashconnect.getSigner(provider);
 
@@ -72,8 +72,8 @@ export const sendTransaction = async (sender, amount) => {
             "tokenTransfer",
             new ContractFunctionParameters()
                 .addAddress(getSolidityAddress(accountId))
-                .addAddress(getSolidityAddress("0.0.47762050"))
-                .addInt64(Number(5))
+                .addAddress(getSolidityAddress(receiver))
+                .addInt64(amount)
         )
         .freezeWithSigner(signer);
 
