@@ -1,5 +1,4 @@
 import React from "react";
-// import AppPageTitle from "../AppPageTitle/AppPageTitle";
 import { connectToWallet, associateUser } from "../../utils/hashconnect";
 import TransferToken from "../TransferToken";
 
@@ -16,7 +15,6 @@ const Home = ({ isWalletConnected, balance, setBalance }) => {
 
   return (
     <div style={{ opacity: "1" }}>
-      {/* <AppPageTitle /> */}
       <div className="mb-5 card">
         <div className="d-flex align-items-center justify-content-between card-header-alt p-4 card-header">
           <div>
