@@ -23,10 +23,10 @@ const App = () => {
   );
 
   return (
-    <div className="app-wrapper app-sidebar-fixed app-header-fixed">
+    <div className="app-wrapper app-sidebar-fixed">
       <Sidebar />
       <div className="app-main">
-        <Header />
+        {/* <Header /> */}
         <div className="app-content">
           <div className="app-content--inner">
             <div className="app-content--inner__wrapper">

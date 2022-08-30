@@ -68,7 +68,7 @@ const Sidebar = () => {
             <div className="sidebar-navigation">
               <div className="app-sidebar--widget">
                 <div className="sidebar-header align-items-center font-weight-bold d-flex justify-content-between text-primary">
-                  <span>Watch list</span>
+                  <span>Balance</span>
                 </div>
                 <div className="app-sidebar-spacer">
                   <div className="d-flex justify-content-between mt-2 mb-1">
@@ -101,14 +101,6 @@ const Sidebar = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="d-flex mt-3 justify-content-between">
-                    {/* <button className="px-4 py-2 text-uppercase btn btn-outline-danger">
-                      <small className="font-weight-bold px-1">Deposit</small>
-                    </button> */}
-                    <button className="px-4 py-2 text-uppercase btn btn-success">
-                      <small className="font-weight-bold px-1">Connect</small>
-                    </button>
                   </div>
                 </div>
                 <div style={{ position: "relative" }}>
@@ -143,30 +135,9 @@ const Sidebar = () => {
           </div>
         </div>
         <div className="app-sidebar--footer">
-          <ul>
-            <li>
-              <a
-                className="btn btn-sm btn-transition-none px-2 mx-2"
-                id="OverviewDashboardTooltip123"
-                href="/"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                </svg>
-              </a>
-            </li>
-          </ul>
+          <button class="btn btn-sm btn-light font-weight-bold btn-transition-none btn-block">
+            Disconnect
+          </button>
         </div>
       </div>
       <div className="app-sidebar-overlay"></div>
