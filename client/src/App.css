@@ -30235,3 +30235,7 @@ body {
 		padding-left: 100px
 	}
 }
+
+.lab49-card-container {
+  min-height: 400px;
+}
