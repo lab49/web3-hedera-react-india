@@ -48,6 +48,8 @@ export const connectToWallet = async () => {
     hashconnect.connectToLocalWallet();
 }
 
+export const getAccountId = () => accountId
+
 export const getBalance = async () => {
     const provider = hashconnect.getProvider("testnet", topic, accountId)
     const accountBalance = await provider.getAccountBalance(accountId);
@@ -78,7 +80,12 @@ export const sendTransaction = async (receiver, amount) => {
         .freezeWithSigner(signer);
 
     const res = await contractExecTx1.executeWithSigner(signer);
-    console.log({ res })
+    const receipt = await provider.getTransactionReceipt(res.transactionId);
+
+    console.log({ res, receipt })
+    alert("contract execution: " + receipt.status.toString());
+
+    return res.transactionId;
 }
 
 export const associateUser = async () => {

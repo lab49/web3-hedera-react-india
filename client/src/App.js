@@ -1,20 +1,22 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import { connectToWallet, getBalance, sendTransaction, associateUser, initializeWallet, dissconnectWallet } from './utils/hashconnect';
+import React, { useState, useEffect } from "react";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Footer from "./components/Footer/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { getBalance, initializeWallet } from "./utils/hashconnect";
+import Home from "./components/Home/Home";
+import WalletNotFound from "./components/WalletNotFound";
+import Spinner from "./components/Spinner";
 
-function App() {
+const App = () => {
   const [isWalletFound, setIsWalletFound] = useState(true);
   const [isWalletConnected, setIsWalletConnected] = useState(null);
   const [balance, setBalance] = useState();
-  const [receiver, setReceiver] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [showSpinner, setShowSpinner] = useState(false);
 
   useEffect(() => {
-    initializeWallet(updateWalletDetails)
+    setShowSpinner(true);
+    initializeWallet(updateWalletDetails);
   }, []);
 
   const updateWalletDetails = async (isWalletFound, WalletConnected) => {
@@ -22,79 +24,32 @@ function App() {
       setIsWalletFound(false);
     } else if (WalletConnected) {
       setIsWalletConnected(WalletConnected);
-      setBalance(await getBalance())
+      setBalance(await getBalance());
     }
-  }
-  const updateReceiver = ({ target }) => {
-    setReceiver(target.value)
-  }
-  const updateAmount = ({ target }) => {
-    setAmount(target.value)
-  }
-
-  const send = () => {
-    sendTransaction(receiver, Number(amount))
-  }
-
-  const dissconnect = () => {
-    dissconnectWallet();
-    setIsWalletConnected(false);
-  }
+    setShowSpinner(false);
+  };
 
 
   return (
-    <div className="App">
-      {
-        isWalletFound ? (
-          <>
-            {
-              isWalletConnected ? (
-                <>
-                  {
-                    balance ? (
-                      <>
-                        <Alert variant='info'>
-                          Balance : {balance}
-                        </Alert>
-
-                        <div className='d-flex justify-content-center'>
-
-                          <Form className='w-50'>
-                            <Form.Group className="mb-3">
-                              <Form.Control type="text" placeholder='Receiver' value={receiver} onChange={updateReceiver} />
-                            </Form.Group>
-                            <Form.Group className="mb-3">
-                              <Form.Control type="number" placeholder='Amount' value={amount} onChange={updateAmount} />
-                            </Form.Group>
-                          </Form>
-                        </div>
-                        <Button onClick={send}>Send</Button>
-                      </>
-                    ) : (
-                      <div>
-                        <Alert variant='danger'>
-                          Your account is not associated with Token
-                        </Alert>
-                        <Button onClick={associateUser}>Associate Token</Button>
-                      </div>
-                    )
-                  }
-                  <br />
-                  <Button className='mt-4' onClick={dissconnect}>Dissconnect</Button>
-                </>
+    <div className="app-wrapper app-sidebar-fixed">
+      {showSpinner && <Spinner />}
+      <Sidebar isWalletConnected={isWalletConnected} balance={balance} setIsWalletConnected={setIsWalletConnected} />
+      <div className="app-main">
+        <div className="app-content">
+          <div className="app-content--inner">
+            <div className="app-content--inner__wrapper">
+              {isWalletFound ? (
+                <Home isWalletConnected={isWalletConnected} balance={balance} setBalance={setBalance} />
               ) : (
-                <Button onClick={connectToWallet}>Connect to Wallet</Button>
-              )
-            }
-          </>
-        ) : (
-          <Alert variant='danger'>
-            Wallet Not found, please install HaskPack wallet extension
-          </Alert>
-        )
-      }
-    </div >
+                <WalletNotFound />
+              )}
+            </div>
+          </div>
+          <Footer />
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default App;
