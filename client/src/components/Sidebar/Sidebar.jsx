@@ -20,6 +20,7 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
               title=""
               href="#"
             >
+              <div className="lab49-coin">LAB49</div>
               <div className="app-sidebar-logo--text">
                 <span>Crypto</span>
                 <img
@@ -84,10 +85,10 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
                             <div className="d-flex">
                               <div className="text-left ml-2">
                                 <div className="d-flex align-items-center justify-content-between">
-                                  <img src="lab49.png" height={40} />
-                                  <div className="fs-3 mx-3">{balance}</div>
-                                  <div className="font-weight-bold text-dark fs-5">
-                                    L49
+                                  <div className="fs-3 ml-3 mr-5">{balance}</div>
+                                  <div className="d-flex font-weight-bold text-dark fs-5">
+                                    <div className="dollar">$</div>
+                                    <div className="symbol">L49</div>
                                   </div>
                                 </div>
                               </div>

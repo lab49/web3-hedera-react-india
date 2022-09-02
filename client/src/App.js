@@ -36,7 +36,23 @@ const App = () => {
       <Sidebar isWalletConnected={isWalletConnected} balance={balance} setIsWalletConnected={setIsWalletConnected} />
       <div className="app-main">
         <div className="app-content">
-          <div className="app-content--inner">
+        <div className="media-wrap">
+         <video className="media"
+            autoPlay
+            muted
+            loop
+            height="800"
+            width="500"
+            poster="https://www.lab49.com/wp-content/uploads/2020/06/desktop-video-3-poster.jpg"
+            data-origwidth="0" data-origheight="0"
+            >
+                <source type="video/mp4" src="https://www.lab49.com/wp-content/uploads/2020/06/desktop-video-3.mp4"/>
+                <source type="video/webm" src="https://www.lab49.com/wp-content/uploads/2020/06/desktop-video-3.webm"/>
+                <source type="video/ogg" src="https://www.lab49.com/wp-content/uploads/2020/06/desktop-video-3.ogg"/>
+                <img src="https://www.lab49.com/wp-content/uploads/2020/06/desktop-video-3-fallback.jpg" alt="Video fallback"/>
+        </video>
+        </div>
+          <div className="app-content--inner align-items-center">
             <div className="app-content--inner__wrapper">
               {isWalletFound ? (
                 <Home isWalletConnected={isWalletConnected} balance={balance} setBalance={setBalance} />
