@@ -16,6 +16,14 @@ a {
 	z-index: 25
 }
 
+.media-wrap {
+	position: absolute;
+	top: 0;
+	left: 19%;
+	width: 81%;
+	height: calc(100% - 70px);
+}
+
 .left-0 {
 	left: 0 !important
 }
@@ -25057,7 +25065,7 @@ a.card-img-wrapper:hover .img-wrapper-overlay {
 
 .header-nav-menu>ul>li .submenu-dropdown--xl {
 	width: 640px;
-	margin-left: -320px
+	margin-left: -19%;
 }
 
 .header-nav-menu>ul>li .submenu-dropdown--xxl {
@@ -28846,7 +28854,7 @@ a.card-img-wrapper:hover .img-wrapper-overlay {
 @media (min-width:1100px) {
 	.app-header-fixed .app-header {
 		position: fixed;
-		left: 320px;
+		left: 19%;
 		right: 0;
 		margin-left: 0
 	}
@@ -28854,7 +28862,7 @@ a.card-img-wrapper:hover .img-wrapper-overlay {
 
 @media (min-width:1100px) {
 	.app-sidebar-fixed:not(.app-header-fixed) .app-header {
-		margin-left: 320px
+		margin-left: 19%
 	}
 }
 
@@ -28957,7 +28965,7 @@ a.card-img-wrapper:hover .img-wrapper-overlay {
 }
 
 .app-sidebar {
-	width: 320px;
+	width: 19%;
 	flex-direction: column;
 	display: flex;
 	height: 100%;
@@ -29022,7 +29030,12 @@ a.card-img-wrapper:hover .img-wrapper-overlay {
 @media (max-width:1099.98px) {
 	.app-sidebar {
 		position: fixed !important;
-		left: -320px !important
+		left: -19% !important
+	}
+
+	.media-wrap {
+		left : 0;
+		width: 100%;
 	}
 
 	.app-sidebar-mobile-open .app-sidebar {
@@ -29040,7 +29053,7 @@ a.card-img-wrapper:hover .img-wrapper-overlay {
 	}
 
 	.app-sidebar-collapsed .app-sidebar:hover:not(.app-sidebar--mini) {
-		width: 320px;
+		width: 19%;
 		position: fixed;
 		box-shadow: .46875rem 0 2.1875rem rgba(59, 62, 102, .03), .9375rem 0 1.40625rem rgba(59, 62, 102, .03), .25rem 0 .53125rem rgba(59, 62, 102, .05), .125rem 0 .1875rem rgba(59, 62, 102, .03)
 	}
@@ -29914,11 +29927,16 @@ a.card-img-wrapper:hover .img-wrapper-overlay {
 	justify-content: space-between
 }
 
+
+
 @media (max-width:1380.98px) {
+	.media-wrap {
+		height:  calc(100% - 35px);
+	}
 	.app-footer {
 		display: block;
 		text-align: center;
-		height: auto;
+		height: 35px;
 		padding: .33333rem .5rem .5rem
 	}
 
@@ -29950,7 +29968,7 @@ a.card-img-wrapper:hover .img-wrapper-overlay {
 	position: fixed;
 	bottom: 0;
 	z-index: 22;
-	left: 320px;
+	left: 19%;
 	right: 0;
 	width: auto
 }
@@ -30214,7 +30232,7 @@ body {
 }
 
 .app-sidebar-fixed .app-content {
-	padding-left: 320px
+	padding-left: 19%
 }
 
 @media (max-width:1099.98px) {
@@ -30237,7 +30255,7 @@ body {
 }
 
 .lab49-card-container {
-  min-height: 400px;
+  min-height: 350px;
 }
 
 .lab49-coin {
@@ -30271,13 +30289,6 @@ body {
 	left: -13px;
 }
 
-.media-wrap {
-	position: absolute;
-	top: 0;
-	left: 320px;
-	width: calc(100% - 320px);
-	height: calc(100% - 70px);
-}
 
 .media{
 	width: 100%;
