@@ -30,8 +30,8 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
               </div>
             </a>
           </div>
-          <i class="fa-regular fa-circle-dot"></i>
-          <i class="bi bi-record-circle"></i>
+          <i className="fa-regular fa-circle-dot"></i>
+          <i className="bi bi-record-circle"></i>
           <button
             className={`btn btn-sm collapse-sidebar-btn ${
               isWalletConnected ? "text-success" : "text-danger"
@@ -85,10 +85,9 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
                             <div className="d-flex">
                               <div className="text-left ml-2">
                                 <div className="d-flex align-items-center justify-content-between">
-                                  <div className="fs-3 ml-3 mr-5">{balance}</div>
-                                  <div className="d-flex font-weight-bold text-dark fs-5">
-                                    <div className="dollar">$</div>
-                                    <div className="symbol">L49</div>
+                                  <div className="fs-4 ml-3 mr-2">{balance}</div>
+                                  <div className="fs-4">
+                                    L49
                                   </div>
                                 </div>
                               </div>
@@ -108,7 +107,7 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
                               <a
                                 href={`https://hashscan.io/#/testnet/account/${accountId}`}
                                 target="_blank"
-                                class="nav-link text-primary"
+                                className="nav-link text-primary"
                               >
                                 View Transactions
                               </a>
