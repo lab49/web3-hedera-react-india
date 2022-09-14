@@ -30264,12 +30264,11 @@ body {
 	border: 1px solid black;
 	border-radius: 50%;
 	background: #eee;
-	DISPLAY: FLEX;
-	ALIGN-ITEMS: CENTER;
-	rotate: 90;
+	display: flex;
+	align-items: center;
 	justify-content: center;
 	transform: rotate(-45deg);
-	font-size: 13px;
+	font-size: 12px;
 	color: #9e2521;
 	font-weight: bold;
 }
@@ -30300,3 +30299,7 @@ body {
 	color: #666;
 	font-weight: bold;
 }
+
+.app-header-title {
+	letter-spacing: 2px;
+ }

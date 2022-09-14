@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -35,6 +36,7 @@ const App = () => {
       {showSpinner && <Spinner />}
       <Sidebar isWalletConnected={isWalletConnected} balance={balance} setIsWalletConnected={setIsWalletConnected} />
       <div className="app-main">
+        <Header />
         <div className="app-content">
         <div className="media-wrap">
          <video className="media"
