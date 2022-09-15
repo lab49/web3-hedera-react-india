@@ -16,7 +16,8 @@ how to run server:
 
 3- Update .env file with your account id and private key
 
-Use below commands to -
-compile contract- solcjs --bin contract.sol   
-save contract on hedra-  node create-contract.js 
-deploy contract- node deploy-contract.js     
+4- To compile solidity smart contract-
+    cd src/contract
+    solcjs --bin TokenContract.sol
+
+4- Run command "node index" will create new token and deploy smart contract on hedera test network
