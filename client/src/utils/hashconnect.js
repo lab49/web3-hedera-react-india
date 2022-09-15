@@ -83,7 +83,7 @@ export const sendTransaction = async (receiver, amount) => {
     const receipt = await provider.getTransactionReceipt(res.transactionId);
 
     console.log({ res, receipt })
-    alert("contract execution: " + receipt.status.toString());
+    console.log("contract execution: " + receipt.status.toString());
 
     return res.transactionId;
 }

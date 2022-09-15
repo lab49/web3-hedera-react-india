@@ -75,7 +75,7 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
                         </div>
                       </div>
                     </div>
-                    {balance && (
+                    {(balance != undefined) && (
                       <>
                         <div className="sidebar-header align-items-center font-weight-bold d-flex justify-content-between text-primary font-size-md">
                           <span>Balance</span>

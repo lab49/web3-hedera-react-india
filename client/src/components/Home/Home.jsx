@@ -21,7 +21,7 @@ const Home = ({ isWalletConnected, balance, setBalance }) => {
         </div>
         <div className="divider"></div>
         <div className="divider"></div>
-        {isWalletConnected && balance ? (
+        {isWalletConnected && (balance != undefined) ? (
           <div className="card-body">
             <TransferToken setBalance={setBalance} />
           </div>
