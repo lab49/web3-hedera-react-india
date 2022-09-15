@@ -36,7 +36,7 @@ const App = () => {
       <Sidebar isWalletConnected={isWalletConnected} balance={balance} setIsWalletConnected={setIsWalletConnected} />
       <div className="app-main">
         <div className="app-content">
-          <div className="app-content--inner">
+          <div className="app-content--inner align-items-center">
             <div className="app-content--inner__wrapper">
               {isWalletFound ? (
                 <Home isWalletConnected={isWalletConnected} balance={balance} setBalance={setBalance} />

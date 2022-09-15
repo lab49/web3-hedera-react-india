@@ -4,7 +4,7 @@ const WalletNotFound = () => {
   return (
     <div>
       <div className="card lab49-card-container">
-        <div class="card-header">
+        <div className="card-header">
           <div className="font-weight-bold fs-2">Hash Pack Wallet</div>
         </div>
         <div className="divider"></div>

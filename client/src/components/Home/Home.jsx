@@ -14,9 +14,9 @@ const Home = ({ isWalletConnected, balance, setBalance }) => {
   };
 
   return (
-    <div style={{ opacity: "1" }}>
+    <div>
       <div className="mb-5 card lab49-card-container">
-        <div class="card-header">
+        <div className="card-header">
           <div className="font-weight-bold fs-2">{getHeading()}</div>
         </div>
         <div className="divider"></div>

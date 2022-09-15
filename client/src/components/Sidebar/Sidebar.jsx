@@ -18,19 +18,20 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
               aria-current="page"
               className="app-sidebar-logo active"
               title=""
-              href="#"
+              href="\"
             >
               <div className="app-sidebar-logo--text">
                 <span>Crypto</span>
                 <img
                   src="https://www.lab49.com/wp-content/uploads/2020/06/logo.svg"
                   height={20}
+                  alt=""
                 />
               </div>
             </a>
           </div>
-          <i class="fa-regular fa-circle-dot"></i>
-          <i class="bi bi-record-circle"></i>
+          <i className="fa-regular fa-circle-dot"></i>
+          <i className="bi bi-record-circle"></i>
           <button
             className={`btn btn-sm collapse-sidebar-btn ${
               isWalletConnected ? "text-success" : "text-danger"
@@ -60,7 +61,7 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
               <div className="scrollbar-container ps ps--active-y">
                 <div className="sidebar-navigation">
                   <div className="app-sidebar--widget">
-                    <div className="sidebar-header align-items-center font-weight-bold d-flex justify-content-between text-primary">
+                    <div className="sidebar-header align-items-center font-weight-bold d-flex justify-content-between text-primary font-size-md">
                       <span>Account</span>
                     </div>
                     <div className="app-sidebar-spacer">
@@ -68,7 +69,7 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
                         <div className="d-flex">
                           <div className="text-left ml-2">
                             <div className="d-flex align-items-center justify-content-between">
-                              <div className="fs-4 mx-3">{accountId}</div>
+                              <div className="font-weight-bold mx-3">{accountId}</div>
                             </div>
                           </div>
                         </div>
@@ -76,19 +77,16 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
                     </div>
                     {balance && (
                       <>
-                        <div className="sidebar-header align-items-center font-weight-bold d-flex justify-content-between text-primary">
+                        <div className="sidebar-header align-items-center font-weight-bold d-flex justify-content-between text-primary font-size-md">
                           <span>Balance</span>
                         </div>
                         <div className="app-sidebar-spacer">
-                          <div className="d-flex justify-content-between mt-2 mb-1">
-                            <div className="d-flex">
-                              <div className="text-left ml-2">
-                                <div className="d-flex align-items-center justify-content-between">
-                                  <img src="lab49.png" height={40} />
-                                  <div className="fs-3 mx-3">{balance}</div>
-                                  <div className="font-weight-bold text-dark fs-5">
-                                    L49
-                                  </div>
+                          <div className="d-flex justify-content-between mb-1">
+                            <div className="text-left">
+                              <div className="d-flex align-items-center justify-content-between">
+                                <div className="font-weight-bold pl-4">
+                                  {balance}{" "}
+                                  <span style={{ color: "#9e2521" }}>L49</span>
                                 </div>
                               </div>
                             </div>
@@ -96,7 +94,7 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
                         </div>
                       </>
                     )}
-                    <div className="sidebar-header align-items-center font-weight-bold d-flex justify-content-between text-primary">
+                    <div className="sidebar-header align-items-center font-weight-bold d-flex justify-content-between text-primary font-size-md">
                       <span>Transactions</span>
                     </div>
                     <div className="app-sidebar-spacer">
@@ -107,7 +105,7 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
                               <a
                                 href={`https://hashscan.io/#/testnet/account/${accountId}`}
                                 target="_blank"
-                                class="nav-link text-primary"
+                                className="nav-link text-primary"
                               >
                                 View Transactions
                               </a>
