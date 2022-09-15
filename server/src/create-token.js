@@ -1,6 +1,6 @@
 const { PrivateKey, TokenCreateTransaction, TokenType } = require("@hashgraph/sdk");
 
-async function createLab49Token(treasuryAccountId, treasuryKey, client) {
+async function createToken(treasuryAccountId, treasuryKey, client) {
 
     //CREATE FUNGIBLE TOKEN (Lab 49)
     let tokenCreateTx = await new TokenCreateTransaction()
@@ -15,12 +15,8 @@ async function createLab49Token(treasuryAccountId, treasuryKey, client) {
     let tokenCreateSubmit = await tokenCreateSign.execute(client);
     let tokenCreateRx = await tokenCreateSubmit.getReceipt(client);
 
-    //GET THE TOKEN ID AND ADDRESS
-    const tokenId = tokenCreateRx.tokenId;
-
-    console.log("The token ID is " + tokenId);
-
-    return tokenId;
+    //RETURN THE TOKEN ID  
+    return tokenCreateRx.tokenId;
 }
 
-module.exports = { createLab49Token }
+module.exports = { createToken }
