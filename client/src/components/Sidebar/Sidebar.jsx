@@ -82,9 +82,9 @@ const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
                         </div>
                         <div className="app-sidebar-spacer">
                           <div className="d-flex justify-content-between mb-1">
-                            <div class="text-left">
-                              <div class="d-flex align-items-center justify-content-between">
-                                <div class="font-weight-bold pl-4">
+                            <div className="text-left">
+                              <div className="d-flex align-items-center justify-content-between">
+                                <div className="font-weight-bold pl-4">
                                   {balance}{" "}
                                   <span style={{ color: "#9e2521" }}>L49</span>
                                 </div>

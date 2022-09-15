@@ -30254,52 +30254,16 @@ body {
 	}
 }
 
+.app-content--inner {
+	background-image: url('../public/lab49-bg-image.jpg');
+	background-repeat: round;
+}
+
 .lab49-card-container {
   min-height: 350px;
-}
-
-.lab49-coin {
-	width: 50px;
-	height: 50px;
-	border: 1px solid black;
-	border-radius: 50%;
-	background: #eee;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transform: rotate(-45deg);
-	font-size: 12px;
-	color: #9e2521;
-	font-weight: bold;
-}
-
-.dollar {
-	position: relative;
-	top: -3px;
-	color: #9e2521;
-}
-
-.symbol {
-	height: 10px;
-	position: relative;
-	line-height: 10px;
-	font-size: 10px;
-	top: 22px;
-	left: -13px;
-}
-
-
-.media{
-	width: 100%;
-	height:100%;
-	object-fit: fill;
 }
 
 .app-footer--second {
 	color: #666;
 	font-weight: bold;
 }
-
-.app-header-title {
-	letter-spacing: 2px;
- }
