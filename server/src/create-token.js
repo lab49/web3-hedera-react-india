@@ -9,6 +9,7 @@ async function createToken(treasuryAccountId, treasuryKey, client) {
         .setTokenType(TokenType.FungibleCommon)
         .setInitialSupply(1000)
         .setTreasuryAccountId(treasuryAccountId)
+        .setAdminKey(PrivateKey.fromString(treasuryKey))
         .freezeWith(client);
 
     let tokenCreateSign = await tokenCreateTx.sign(PrivateKey.fromString(treasuryKey));

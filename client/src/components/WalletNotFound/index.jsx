@@ -1,6 +1,6 @@
 import React from "react";
 
-const WalletNotFound = () => {
+const WalletNotFound = ({ setIsWalletFound }) => {
   return (
     <div>
       <div className="card lab49-card-container">
@@ -15,13 +15,12 @@ const WalletNotFound = () => {
               Wallet Not found, please install HaskPack wallet extension
             </div>
             <div className="d-flex justify-content-center">
-              <a
-                href="https://chrome.google.com/webstore/detail/hashpack/gjagmgiddbbciopjhllkdnddhcglnemk"
-                target="_blank"
+              <button
                 className="btn btn-primary btn-lg mx-1"
+                onClick={() => setIsWalletFound(true)}
               >
                 Install
-              </a>
+              </button>
             </div>
           </div>
         </div>

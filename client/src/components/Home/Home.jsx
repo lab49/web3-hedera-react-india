@@ -1,8 +1,8 @@
 import React from "react";
-import { connectToWallet, associateUser } from "../../utils/hashconnect";
+
 import TransferToken from "../TransferToken";
 
-const Home = ({ isWalletConnected, balance, setBalance }) => {
+const Home = ({ isWalletConnected, setIsWalletConnected, balance, setBalance }) => {
   const getHeading = () => {
     if (isWalletConnected && balance) {
       return "Transfer Token";
@@ -15,7 +15,7 @@ const Home = ({ isWalletConnected, balance, setBalance }) => {
 
   return (
     <div>
-      <div className="mb-5 card lab49-card-container">
+      <div className="card lab49-card-container">
         <div className="card-header">
           <div className="font-weight-bold fs-2">{getHeading()}</div>
         </div>
@@ -36,7 +36,7 @@ const Home = ({ isWalletConnected, balance, setBalance }) => {
                   <div className="d-flex justify-content-center">
                     <button
                       className="font-weight-bold btn btn-primary btn-lg"
-                      onClick={associateUser}
+                      onClick={() => setBalance(100)}
                     >
                       Associate Token
                     </button>
@@ -50,7 +50,7 @@ const Home = ({ isWalletConnected, balance, setBalance }) => {
                   <div className="d-flex justify-content-center">
                     <button
                       className="font-weight-bold btn btn-success btn-lg"
-                      onClick={connectToWallet}
+                      onClick={() => setIsWalletConnected({})}
                     >
                       Connect
                     </button>

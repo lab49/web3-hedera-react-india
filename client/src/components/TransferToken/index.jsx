@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { getBalance, sendTransaction } from "../../utils/hashconnect";
 
 const TransferToken = ({ setBalance }) => {
   const [receiver, setReceiver] = useState("");
@@ -13,8 +12,6 @@ const TransferToken = ({ setBalance }) => {
   };
 
   const send = async () => {
-    await sendTransaction(receiver, amount);
-    setBalance(await getBalance());
     setReceiver("");
     setAmount(0);
   };

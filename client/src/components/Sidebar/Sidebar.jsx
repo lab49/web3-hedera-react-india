@@ -1,11 +1,9 @@
 import React from "react";
-import { dissconnectWallet, getAccountId } from "../../utils/hashconnect";
 
 const Sidebar = ({ isWalletConnected, balance, setIsWalletConnected }) => {
-  const accountId = getAccountId();
+  const accountId = '0.0.46464633';
 
   const dissconnect = () => {
-    dissconnectWallet();
     setIsWalletConnected(false);
   };
 
